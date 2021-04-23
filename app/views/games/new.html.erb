@@ -1,0 +1,15 @@
+<h1>New Game</h1>
+<%= @letters %>
+<p>Whats the longest word you can find?</p>
+<form method="post" action="/score">
+  <!--params[:word]-->
+  <input type="text" name="word">
+  <input type="submit" value="Play!">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <!--params[:letters]-->
+  <%= hidden_field_tag :letters, @letters %>
+</form>
+
+<!-- Showed on raise dentro del metodo score - Parameters:
+
+{"word"=>"hey", "authenticity_token"=>"gtKJ8EkX2zC7R/tq4s6PshvwwP4eDbJrFV1jkbIpRbmCBUfQ62q7uxZGLW+U1INEG8EGol13nbOA21SgFN/Lnw==", "letters"=>"OPCZYJSUQW"} -->
